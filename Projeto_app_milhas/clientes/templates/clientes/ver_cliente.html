@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+
+{%block conteudo%} 
+<h1 class="mt-5">{{ cliente.Nome }} </h1>
+<dl>
+
+  
+    <dt>ID</dt>
+    <dd>{{ cliente.id }}</dd>
+   
+    <dt>Telefone</dt>
+    <dd>{{ cliente.Telefone }}</dd>
+    
+    <dt>E-mail</dt>
+    <dd>{{ cliente.Email }}</dd>
+
+    <dt>Data voo</dt>
+    <dd>{{ cliente.Data_voo|date:'d/m/Y H:i:s' }}</dd>
+
+    <dt>Nº da Reserva</dt>
+    <dd>{{ cliente.Ticket_voo }}</dd>
+
+    <dt>Dados vendedor</dt>
+    <dd>{{ cliente.Dados_vendedor }}</dd>
+
+    <dt>Milheiro</dt>
+    <dd>{{ cliente.Milheiro }}</dd>
+    
+    <dt>Login</dt>
+    <dd>{{ cliente.Login }}</dd>
+
+    <dt>Senha</dt>
+    <dd>{{ cliente.Senha }}</dd>
+    
+    <dt>Compania</dt>
+    <dd>{{ cliente.Compania }}</dd>
+
+    <dt>Origem</dt>
+    <dd>{{ cliente.Origem }}</dd>
+
+    <br><br>
+
+    <h4>FOTOS</h4>
+    {% if cliente.foto %}
+    <p>
+        <img src="{{ cliente.foto.url }}" style="max-width: 400px; height: auto;">
+    </p>
+    {%endif%}
+
+</dl>
+
+{%endblock%}
